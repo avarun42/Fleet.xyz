@@ -22,7 +22,6 @@ class Map extends Component {
 
     const { otherPositions } = this.props;
     const otherCars = [];
-    console.log(otherPositions);
     otherPositions.forEach((position, i) => {
       otherCars.push(
         <img
@@ -35,8 +34,6 @@ class Map extends Component {
         />
       );
     });
-
-    console.log('Prerender otherCars:', otherCars);
 
     return (
       <div className="map" style={{ width: '100%', height: '300px' }}>

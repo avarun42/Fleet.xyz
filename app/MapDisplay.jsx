@@ -39,7 +39,6 @@ class MapDisplay extends Component {
   render() {
     const { isLoading, curPosition, otherCars } = this.state;
     const myPosition = `(${curPosition.latitude}, ${curPosition.longitude})`;
-    console.log(otherCars);
 
     return (
       isLoading
