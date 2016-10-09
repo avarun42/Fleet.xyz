@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+import { omit } from 'lodash';
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +25,7 @@ class App extends React.Component {
     };
 
     this.props.socket.on('location pack', msg => {
-      this.setState({ otherLocations: _.omit(msg, this.VIN) });
+      this.setState({ otherLocations: omit(msg, this.VIN) });
     });
 
     gm.info.getCurrentPosition(positionChanged, true);
