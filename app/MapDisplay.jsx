@@ -1,6 +1,8 @@
 import React from 'react';
 import { omit } from 'lodash';
 
+import Map from './map';
+
 class MapDisplay extends React.Component {
   constructor() {
     super();
@@ -39,6 +41,7 @@ class MapDisplay extends React.Component {
       <div>
         <h1>Your VIN is: {this.VIN}</h1>
         <p>Your current location is: {curPosition}</p>
+        <Map curPosition={this.state.curPosition}/>
       </div>
     );
   }
