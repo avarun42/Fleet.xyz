@@ -1,34 +1,34 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { omit } from 'lodash';
 
-import Map from './map';
+import Map from './Map';
 
-class MapDisplay extends React.Component {
+class MapDisplay extends Component {
   constructor() {
-    console.log('wtf');
     super();
     this.VIN = gm.info.getVIN();
     this.state = {
+      isLoading: true,
       curPosition: {
         latitude: null,
         longitude: null,
         heading: null,
         altitude: null,
       },
-      otherLocations: {},
+      otherPositions: {},
     };
   }
 
   componentWillMount() {
     const positionChanged = position => {
-      this.setState({ curPosition: position.coords });
+      this.setState({ curPosition: position.coords, isLoading: false });
 
       const locationToEmit = Object.assign({}, position, { VIN: this.VIN });
       this.props.socket.emit('location', locationToEmit);
     };
 
     this.props.socket.on('location pack', msg => {
-      this.setState({ otherLocations: omit(msg, this.VIN) });
+      this.setState({ otherPositions: new Map(omit(msg, this.VIN)) });
     });
 
     gm.info.getCurrentPosition(positionChanged, true);
@@ -36,20 +36,25 @@ class MapDisplay extends React.Component {
   }
 
   render() {
-    const curPosition = `(${this.state.curPosition.latitude}, ${this.state.curPosition.longitude})`;
+    const { isLoading, curPosition, otherPositions } = this.state;
+    const myPosition = `(${curPosition.latitude}, ${curPosition.longitude})`;
 
     return (
-      <div>
-        <h1>Your VIN is: {this.VIN}</h1>
-        <p>Your current location is: {curPosition}</p>
-        <Map curPosition={this.state.curPosition} />
-      </div>
+      isLoading
+        ? <div>Loading...</div>
+        : (
+        <div>
+          <p>Your VIN is: {this.VIN}</p>
+          <p>Your current location is: {myPosition}</p>
+          <Map curPosition={curPosition} otherPositions={Array.from(otherPositions)} />
+        </div>
+      )
     );
   }
 }
 
 MapDisplay.propTypes = {
-  socket: React.PropTypes.instanceOf(io.Socket),
+  socket: PropTypes.instanceOf(io.Socket),
 };
 
 module.exports = MapDisplay;
