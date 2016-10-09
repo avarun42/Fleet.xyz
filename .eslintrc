@@ -5,6 +5,7 @@
   },
   "rules": {
     "react/prefer-stateless-function": ["warn", { "ignorePureComponents": true }],
-    "import/no-extraneous-dependencies": ["error", { "optionalDependencies": false }]
+    "import/no-extraneous-dependencies": ["error", { "optionalDependencies": false }],
+    "arrow-parens": ["error", "as-needed"]
   }
 }

@@ -7,12 +7,17 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.curLocation = gm.info.getCurrentPosition();
+    gm.info.getCurrentPosition(position => {
+      this.curLocation = position;
+    }, true);
   }
 
   render() {
     return (
-      <h1>{this.props.msg}. Your VIN is: {gm.info.getVIN()}</h1>
+      <div>
+        <h1>{this.props.msg}. Your VIN is: {gm.info.getVIN()}</h1>
+        <p>Your current location is: {this.curLocation}</p>
+      </div>
     );
   }
 }
