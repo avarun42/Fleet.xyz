@@ -1,11 +1,10 @@
 {
   "extends": "airbnb",
   "globals": {
-    "React": false,
-    "ReactDOM": false,
     "gm": false
   },
   "rules": {
-    "react/prefer-stateless-function": ["warn", { "ignorePureComponents": true }]
+    "react/prefer-stateless-function": ["warn", { "ignorePureComponents": true }],
+    "import/no-extraneous-dependencies": ["error", { "optionalDependencies": false }]
   }
 }

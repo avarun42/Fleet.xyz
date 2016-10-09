@@ -1,4 +1,7 @@
-/* global React, ReactDOM, document */
+/* global document */
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 const App = require('./app');
 

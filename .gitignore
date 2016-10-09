@@ -1,6 +1,6 @@
 .DS_Store
-node_modules
-src/js
-
 .idea
-src/js
+
+node_modules
+
+src/js/app.bundle.js
