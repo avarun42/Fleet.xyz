@@ -2,6 +2,6 @@
 var App = require('./app.js');
 
 ReactDOM.render(
-  <App msg={'hello NGI'} />,
+  <App msg={'Hello NGI'} />,
   document.getElementById('main')
 );
