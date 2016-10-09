@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gmWebApp>
-  <AppID>96681004</AppID>
+  <AppID>91119971</AppID>
   <AppType>RemoteHigh</AppType>
-  <FriendlyName>Hello React</FriendlyName>
+  <FriendlyName>Fleet.xyz</FriendlyName>
   <VehicleStatus>Drive</VehicleStatus>
   <AutoStart>false</AutoStart>
   <AppCategory>General</AppCategory>
@@ -10,8 +10,8 @@
   <MainURL>index.html</MainURL>
   <AppVersion>0.1.0</AppVersion>
   <SetupURL>setup.html</SetupURL>
-  <LocalPath>App96681004</LocalPath>
-  <Developer>Developer</Developer>
+  <LocalPath>App91119971</LocalPath>
+  <Developer>PattyPay</Developer>
   <TrustedApp>false</TrustedApp>
   <RequestedBy>1</RequestedBy>
   <TestApp>true</TestApp>
