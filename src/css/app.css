@@ -1,5 +1,33 @@
-/* Your CSS goes here */
-#main {
-  text-align: center;
+html {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
 }
 
+#main > div > div:nth-child(1) {
+    text-align: center;
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -20px; 
+
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#main > div > div:nth-child(1):after {
+    content: "";
+    display: block;
+}
+
+#main > div > div:nth-child(2), #main > div > div:nth-child(1):after {
+    height: 20px;
+}
+
+#main > div > div:nth-child(2) {
+    text-align: center;
+    font-size: smaller;
+}
+
+#main > div > div:nth-child(2) > button {
+    margin-top: 8px;
+    font-size: 14px;
+    margin-right: 30px;
+}

@@ -11,10 +11,10 @@ class ButtonNav extends Component {
 
   render() {
     return (
-      <div>
-        <button type="button" onClick={this.destinationChangerCallback}>Choose Destination</button>
-        <button type="button" onClick={this.messageSenderCallback}>Send Message</button>
+      <div styleName="nav">
+        <button type="button" onClick={this.destinationChangerCallback}>Sync Destination</button>
         <button type="button" onClick={this.mapDisplayCallback}>Map</button>
+        <button type="button" onClick={this.messageSenderCallback}>Send Message</button>
       </div>
     );
   }
