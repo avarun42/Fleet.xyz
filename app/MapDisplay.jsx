@@ -1,7 +1,7 @@
 import React from 'react';
 import { omit } from 'lodash';
 
-class App extends React.Component {
+class MapDisplay extends React.Component {
   constructor() {
     super();
     this.VIN = gm.info.getVIN();
@@ -37,16 +37,15 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>{this.props.msg}. Your VIN is: {this.VIN}</h1>
+        <h1>Your VIN is: {this.VIN}</h1>
         <p>Your current location is: {curPosition}</p>
       </div>
     );
   }
 }
 
-App.propTypes = {
-  msg: React.PropTypes.string,
+MapDisplay.propTypes = {
   socket: React.PropTypes.instanceOf(io.Socket),
 };
 
-module.exports = App;
+module.exports = MapDisplay;
