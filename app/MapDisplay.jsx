@@ -38,14 +38,12 @@ class MapDisplay extends Component {
 
   render() {
     const { isLoading, curPosition, otherCars } = this.state;
-    const myPosition = `(${curPosition.latitude}, ${curPosition.longitude})`;
 
     return (
       isLoading
         ? <div>Loading...</div>
         : (
         <div>
-          <p>Your VIN is: {gm.info.getVIN()}. Your current location is: {myPosition}</p>
           <Map curPosition={curPosition} otherPositions={otherCars.map(car => car.coords)} />
         </div>
       )

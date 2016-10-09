@@ -22,7 +22,7 @@ class DestinationChanger extends Component {
       <div>
         <p>Would you like to share your destination with the other members of your fleet?
         Make sure you have selected a destination through the GM Nav.</p>
-        <button onClick={this.handleSubmit} type="submit">OK</button>
+        <button onClick={this.handleSubmit} type="submit">Yes!</button>
       </div>
     );
   }
