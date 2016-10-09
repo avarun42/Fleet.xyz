@@ -1,7 +1,7 @@
 // React, ReactDOM are defined globally
-var App = require('./app.js');
+let App = require('./app.js');
 
 ReactDOM.render(
-  <App msg={'Hello NGI'} />,
+  <App msg="test"/>,
   document.getElementById('main')
 );

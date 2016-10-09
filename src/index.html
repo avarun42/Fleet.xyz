@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Hello React</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -25,25 +25,21 @@
     <!-- <script src="GMLIB/util.js"></script> -->
     <!-- <script src="GMLIB/voice.js"></script> -->
 
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
-      <div id="main">
+</head>
+<body>
+<div id="wrapper">
+    <div id="close"><img src="images/close.png" onclick="gm.system.closeApp()" alt="close"></div>
+    <div id="main"></div>
+</div>
 
-        <!-- Remove all code inside #main and add your own! -->
-        
-      </div>
-    </div>
+<!-- The vehicle's browser needs a little help before react works properly -->
+<script src="js/vendor/es5-shim.min.js"></script>
 
-    <!-- The vehicle's browser needs a little help before react works properly -->
-    <script src="js/vendor/es5-shim.min.js"></script>
+<!-- Keep React as an external dep, rather than letting webpack bundle it -->
+<script src="js/vendor/react_0_14_6.min.js"></script>
+<script src="js/vendor/react-dom_0_14_6.min.js"></script>
 
-    <!-- Keep React as an external dep, rather than letting webpack bundle it -->
-    <script src="js/vendor/react_0_14_6.min.js"></script>
-    <script src="js/vendor/react-dom_0_14_6.min.js"></script>
-
-    <!-- Your compiled app code (build with `npm run build`) -->
-    <script src="js/app.bundle.js"></script>
-  </body>
+<!-- Your compiled app code (build with `npm run build`) -->
+<script src="js/app.bundle.js"></script>
+</body>
 </html>
