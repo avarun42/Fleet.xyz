@@ -6,6 +6,6 @@ import ReactDOM from 'react-dom';
 const App = require('./app');
 
 ReactDOM.render(
-  <App msg="test" />,
+  <App msg="Hello MHacks" />,
   document.getElementById('main')
 );
