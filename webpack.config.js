@@ -10,12 +10,12 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['react']
-      }
-    }]
+        presets: ['react'],
+      },
+    }],
   },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM'
-  }
-}
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
+};
