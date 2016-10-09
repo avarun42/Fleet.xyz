@@ -5,6 +5,7 @@ import Map from './map';
 
 class MapDisplay extends React.Component {
   constructor() {
+    console.log('wtf');
     super();
     this.VIN = gm.info.getVIN();
     this.state = {
@@ -41,7 +42,7 @@ class MapDisplay extends React.Component {
       <div>
         <h1>Your VIN is: {this.VIN}</h1>
         <p>Your current location is: {curPosition}</p>
-        <Map curPosition={this.state.curPosition}/>
+        <Map curPosition={this.state.curPosition} />
       </div>
     );
   }

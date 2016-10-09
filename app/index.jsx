@@ -16,9 +16,10 @@ const panelIDs = [{
 }];
 
 const socket = io.connect('https://fleetxyz.azurewebsites.net', { reconnect: true });
-const curPanel = findIndex(panelIDs, ['name', 'MapDisplay']).component;
+const curPanel = findIndex(panelIDs, ['name', 'MapDisplay']);
+const curComponent = panelIDs[curPanel].component;
 
 ReactDOM.render(
-  <curPanel socket={socket} />,
+  <MapDisplay socket={socket} />,
   document.getElementById('main')
 );
