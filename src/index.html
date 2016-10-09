@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fleet.xyz</title>
+    <title>Hello React</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <!-- Base css, but you'll likely want to keep them -->
@@ -9,6 +9,8 @@
 
     <!-- Your custom files -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
+
+    <!-- <script src="http://172.17.0.2/target/target-script-min.js#anonymous"></script> -->
 
     <script src="GMLIB/info.js"></script>
     <script src="GMLIB/system.js"></script>
@@ -30,7 +32,7 @@
       <div id="main">
 
         <!-- Remove all code inside #main and add your own! -->
-        <h1>Fleet.xyz</h1>
+        <h1>Hello React</h1>
         <p>
           Your VIN is: <span id="vin"></span>
         </p>
@@ -38,7 +40,14 @@
       </div>
     </div>
 
-    <!-- Your app code: -->
-    <script src="js/app.js"></script>
+    <!-- The vehicle's browser needs a little help before react works properly -->
+    <script src="js/vendor/es5-shim.min.js"></script>
+
+    <!-- Keep React as an external dep, rather than letting webpack bundle it -->
+    <script src="js/vendor/react_0_14_6.min.js"></script>
+    <script src="js/vendor/react-dom_0_14_6.min.js"></script>
+
+    <!-- Your compiled app code (build with `npm run build`) -->
+    <script src="js/app.bundle.js"></script>
   </body>
 </html>
