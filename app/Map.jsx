@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import GoogleMap from 'google-map-react';
+import { fitBounds } from 'google-map-react/utils';
 
 const K_WIDTH = 40;
 const K_HEIGHT = 40;
@@ -22,7 +23,21 @@ class Map extends Component {
 
     const { otherPositions } = this.props;
     const otherCars = [];
+    let [minLat, maxLat, minLng, maxLng] = [100, 0, 100, 0];
+
+
     otherPositions.forEach((position, i) => {
+
+      if (position.latitude < minLat) {
+        minLat = position.latitude;
+      } else if (position.latitude > maxLat) {
+        maxLat = position.latitude;
+      } else if (position.longitude < minLng) {
+        minLng = position.longitude;
+      } else if (position.longitude > maxLng) {
+        maxLng = position.longitude;
+      }
+
       otherCars.push(
         <img
           alt="Fleet Car"
@@ -35,11 +50,29 @@ class Map extends Component {
       );
     });
 
+    // Formatting map bounds
+    const bounds = {
+      nw: {
+        lat: maxLat,
+        lng: minLng
+      },
+      se: {
+        lat: minLat,
+        lng: maxLng
+      }
+    };
+
+    const size = {
+      width: 800,
+      height: 300
+    };
+    const {center, zoom} = fitBounds(bounds, size);
+
     return (
       <div className="map" style={{ width: '100%', height: '300px' }}>
         <GoogleMap
-          center={coordinates}
-          zoom={9}
+          center={center}
+          zoom={zoom}
         >
 
           {/* Icon made by http://www.flaticon.com/authors/freepik from flatiron.com */}
