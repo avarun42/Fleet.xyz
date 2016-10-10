@@ -1,6 +1,9 @@
-# NGI Hello-React
+# Fleet.xyy
 
-This is a React.js starter project for the NGI in-vehicle platform. Please note that NGI does not currently support the latest version of React. Version 0.14.6 is included because it is the highest stable version shown to work reliably in the vehicle. The file `src/js/vendor/es5-shim.min.js` is included because it is required for ReactDOM to render properly in the NGI environment.
+## MHacks8 - Varun Arora, Asim Khanal, Patrick Pei
+
+## NGI-React
+- ReactJS project built for the NGI in-vehicle platform. Please note that NGI does not currently support the latest version of React. Version 0.14.6 is included because it is the highest stable version shown to work reliably in the vehicle. The file `src/js/vendor/es5-shim.min.js` is included because it is required for ReactDOM to render properly in the NGI environment.
 
 ## Get Started
 
