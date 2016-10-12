@@ -10,12 +10,13 @@
     "watch": "node_modules/.bin/webpack --watch # continuously compile app > js/vendor/app.bundle.js",
     "serve": "npm run build; ngi serve          # build then serve app"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "Alan Languirand",
-  "license": "ISC",
+  "repository": "avarun42/Fleet.xyz",
+  "contributors": [
+    "Varun Arora",
+    "Asim Khanal",
+    "Patrick Pei"
+  ],
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "babel-core": "6.14.0",
     "babel-loader": "6.2.5",
